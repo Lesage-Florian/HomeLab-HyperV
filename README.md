@@ -102,7 +102,6 @@ flowchart TB
 | `LAB-PC-RH` | Windows 11 Pro | Poste client — Service RH | 20 | 2048 – 4096 Mo | Dynamique |
 | `LAB-PC-ADMIN` | Windows 11 Pro | Poste d'administration dédié | 30 | 2048 – 4096 Mo | Dynamique |
 
-![Inventaire des VMs dans le Gestionnaire Hyper-V]
 
 ---
 
