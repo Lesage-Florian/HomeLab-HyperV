@@ -13,7 +13,11 @@
 
 ## 🎯 Objectifs du projet
 
-Ce homelab permet de concevoir, sécuriser, superviser et documenter en conditions quasi réelles les briques fondamentales d'un SI d'entreprise :
+Genèse du projet — Ce homelab s'inscrit dans le prolongement direct du projet fil rouge réalisé durant ma formation chez Liora. Ce dernier portait sur l'audit complet et la conception d'une nouvelle infrastructure pour une entreprise spécialisée dans l'analyse des fonds marins, engagée dans une phase de forte croissance à la suite d'une levée de fonds.
+
+L'exercice initial s'arrêtant à la phase d'audit, d'architecture cible et de restitution documentaire (sans déploiement technique), j'ai créé ce homelab pour pousser la démarche jusqu'à l'implémentation concrète. Afin de respecter les capacités matérielles de ma machine hôte tout en restant fidèle aux exigences du projet, j'en ai reproduit les principes clés à échelle réduite.
+
+Cet environnement permet ainsi de déployer, sécuriser, superviser et documenter en conditions quasi réelles les briques fondamentales d'un système d'information d'entreprise :
 
 - **Segmentation réseau & Sécurité (Couches 2/3)** : isolation par VLANs 802.1Q via un commutateur virtuel dédié (`vSwitch-LAB-INTERNE`) et filtrage inter-VLAN centralisé par **OPNsense** (`LAB-FW`).
 - **Services d'Infrastructure & Isolation système (Couche 7)** : annuaire **Active Directory (AD DS)**, résolution **DNS**, découpage par Unités d'Organisation (Direction, RH) et permissions NTFS/SMB.
