@@ -25,7 +25,7 @@
 
 ---
 
-## 3. Livrables attendus pour le dossier technique (RNCP)
+## 3. Documentation & Preuves de fonctionnement à produire
 
 - [ ] **Schéma d'architecture de supervision** : intégration des VLANs, du rôle d'OPNsense et du flux SNMP (`UDP 161`) de Centreon vers les cibles.
 - [ ] **Matrice de supervision** : tableau récapitulatif (équipement cible IP/OS, sondes associées, seuils *Warning / Critical* et justifications techniques).

@@ -6,7 +6,7 @@
 ![Centreon](https://img.shields.io/badge/Supervision-Centreon%20%2F%20AlmaLinux%209-81B900?style=flat-square)
 ![Statut](https://img.shields.io/badge/Statut-En%20cours%20de%20d%C3%A9ploiement-orange?style=flat-square)
 
-> **Projet Portfolio — Administrateur d'Infrastructures Sécurisées (RNCP)**  
+> **Projet Portfolio — Administrateur d'Infrastructures Sécurisées**  
 > Maquette virtualisée sous **Windows 11 + Hyper-V (Type 1)** reproduisant l'infrastructure système et réseau segmentée d'une PME : routage inter-VLAN 802.1Q, filtrage pare-feu centralisé, annuaire Active Directory, serveur de fichiers, stratégie de sauvegarde 3-2-1 et supervision centralisée.
 
 ---
@@ -141,4 +141,4 @@ flowchart TB
 - [Plan d'Adressage & Matrice de Flux](docs/plan-adressage.md)
 - [Supervision Centreon & MCO](docs/supervision.md)
 - [Serveur de Fichiers & Stratégie de Sauvegarde 3-2-1](docs/sauvegarde.md)
-- [Feuille de route & Livrables RNCP](docs/roadmap.md)
+- [Feuille de route & Documentation technique](docs/roadmap.md)
