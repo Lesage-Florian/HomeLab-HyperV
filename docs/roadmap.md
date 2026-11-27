@@ -13,23 +13,23 @@
 ## 2. Prochaines étapes techniques
 
 ### Phase A — Services & Sécurité Active Directory
-- [ ] Finaliser la création des groupes de sécurité et l'application des **GPO** métier (mappage de lecteurs, restrictions, durcissement postes `DIRECTION`, `RH`, `ADMIN`).
-- [ ] Finaliser `LAB-SRV-FILE` (`10.10.100.2`) avec séparation des volumes et partages SMB/NTFS (`RH`, `Direction`, `Commun`).
+- ⏳ Finaliser la création des groupes de sécurité et l'application des **GPO** métier (mappage de lecteurs, restrictions, durcissement postes `DIRECTION`, `RH`, `ADMIN`).
+- ⏳ Finaliser `LAB-SRV-FILE` (`10.10.100.2`) avec séparation des volumes et partages SMB/NTFS (`RH`, `Direction`, `Commun`).
 
 ### Phase B — Sauvegarde & Résilience
-- [ ] Déployer **Veeam Backup & Replication** sur `LAB-SRV-BACKUP` (`10.10.100.3`).
-- [ ] Valider la stratégie **3-2-1** (dépôt local/NAS + réplication ciblée **AWS Glacier**) et documenter un test de restauration.
+- ⏳ Déployer **Veeam Backup & Replication** sur `LAB-SRV-BACKUP` (`10.10.100.3`).
+- ⏳ Valider la stratégie **3-2-1** (dépôt local/NAS + réplication ciblée **AWS Glacier**) et documenter un test de restauration.
 
 ### Phase C — Supervision avancée & MCO
-- [ ] Mettre en place l'alerting Centreon (Postfix/SMTP, contacts, seuils, webhook optionnel).
-- [ ] Ajouter les sondes applicatives AD (`NTDS`, `DNS`, `Netlogon`, `check_dns`, ports `389`/`88`).
-- [ ] Automatiser la sauvegarde de Centreon (`cron` MariaDB + `/etc/centreon*`) et ajuster le seuil RAM de `LAB-SRV-AD`.
+- ⏳ Mettre en place l'alerting Centreon (Postfix/SMTP, contacts, seuils, webhook optionnel).
+- ⏳ Ajouter les sondes applicatives AD (`NTDS`, `DNS`, `Netlogon`, `check_dns`, ports `389`/`88`).
+- ⏳ Automatiser la sauvegarde de Centreon (`cron` MariaDB + `/etc/centreon*`) et ajuster le seuil RAM de `LAB-SRV-AD`.
 
 ---
 
 ## 3. Documentation & Preuves de fonctionnement à produire
 
-- [ ] **Schéma d'architecture de supervision** : intégration des VLANs, du rôle d'OPNsense et du flux SNMP (`UDP 161`) de Centreon vers les cibles.
-- [ ] **Matrice de supervision** : tableau récapitulatif (équipement cible IP/OS, sondes associées, seuils *Warning / Critical* et justifications techniques).
-- [ ] **Preuves de fonctionnement** : captures d'écran du Dashboard Centreon incluant le pic de charge simulé.
-- [ ] **Exports de configuration sanitisés** : sauvegarde XML d'OPNsense et scripts PowerShell d'automatisation AD/GPO.
+- ⏳ **Schéma d'architecture de supervision** : intégration des VLANs, du rôle d'OPNsense et du flux SNMP (`UDP 161`) de Centreon vers les cibles.
+- ⏳ **Matrice de supervision** : tableau récapitulatif (équipement cible IP/OS, sondes associées, seuils *Warning / Critical* et justifications techniques).
+- ⏳ **Preuves de fonctionnement** : captures d'écran du Dashboard Centreon incluant le pic de charge simulé.
+- ⏳ **Exports de configuration sanitisés** : sauvegarde XML d'OPNsense et scripts PowerShell d'automatisation AD/GPO.

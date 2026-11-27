@@ -89,30 +89,30 @@ flowchart LR
 ## ✅ État d'avancement & Feuille de route
 
 ### 1. Socle Réseau & Hyperviseur
-- [x] Activation d'Hyper-V (Windows 11) et création du commutateur virtuel `vSwitch-LAB-INTERNE`
-- [x] Déploiement d'**OPNsense** (`LAB-FW`) : sous-interfaces 802.1Q sur les 5 VLANs, passerelles et DHCP clients
-- [x] Ouverture sélective des flux inter-VLAN vers l'AD (`UDP 53`, `Kerberos 88`, `LDAP 389`, `SMB 445`) et SNMP (`UDP 161`)
-- [ ] Export et versionnement de la configuration XML OPNsense (sanitisée)
+- ✅ Activation d'Hyper-V (Windows 11) et création du commutateur virtuel `vSwitch-LAB-INTERNE`
+- ✅ Déploiement d'**OPNsense** (`LAB-FW`) : sous-interfaces 802.1Q sur les 5 VLANs, passerelles et DHCP clients
+- ✅ Ouverture sélective des flux inter-VLAN vers l'AD (`UDP 53`, `Kerberos 88`, `LDAP 389`, `SMB 445`) et SNMP (`UDP 161`)
+- ⏳ Export et versionnement de la configuration XML OPNsense (sanitisée)
 
 ### 2. Services d'Infrastructure & Domaine
-- [x] Déploiement de `LAB-SRV-AD` (`10.10.100.1`) avec rôles **AD DS** et **DNS**
-- [x] Conception de la structure d'Unités d'Organisation (OU `RH`, `Direction`)
-- [ ] Application des **GPO** métier et durcissement des postes clients (`DIRECTION`, `RH`, `ADMIN`)
+- ✅ Déploiement de `LAB-SRV-AD` (`10.10.100.1`) avec rôles **AD DS** et **DNS**
+- ✅ Conception de la structure d'Unités d'Organisation (OU `RH`, `Direction`)
+- ⏳ Application des **GPO** métier et durcissement des postes clients (`DIRECTION`, `RH`, `ADMIN`)
 
 ### 3. Fichiers & Sauvegarde (Stratégie 3-2-1)
-- [x] Validation du modèle de droits (partages `RH`, `Direction`, `Commun` + permissions NTFS par groupes AD)
-- [x] Validation de la stratégie de sauvegarde **3-2-1** (local/NAS + cible cloud AWS Glacier)
-- [ ] Déploiement complet de `LAB-SRV-FILE` (volumes dédiés, partages SMB/NTFS)
-- [ ] Déploiement et tests de restauration sur `LAB-SRV-BACKUP` (**Veeam Backup & Replication**)
+- ✅ Validation du modèle de droits (partages `RH`, `Direction`, `Commun` + permissions NTFS par groupes AD)
+- ✅ Validation de la stratégie de sauvegarde **3-2-1** (local/NAS + cible cloud AWS Glacier)
+- ⏳ Déploiement complet de `LAB-SRV-FILE` (volumes dédiés, partages SMB/NTFS)
+- ⏳ Déploiement et tests de restauration sur `LAB-SRV-BACKUP` (**Veeam Backup & Replication**)
 
 ### 4. Supervision & MCO (Centreon)
-- [x] Déploiement de `LAB-SUPERVISION` (`10.10.40.1`) sous AlmaLinux 9 et sécurisation de la collecte **SNMP v2c**
-- [x] Sondes actives : disponibilité hôtes (`FW`, `AD-SRV`, `Centreon-SRV`), CPU/RAM/Disque `C:` de l'AD, trafic des 5 VLANs OPNsense
-- [x] Création du tableau de bord *« Globale View Infrastructure LAB »* et validation par injection de trafic inter-VLAN (RRDtool)
-- [ ] Mise en place de l'**alerting** (relais SMTP/Postfix, contacts, politique de notification, option webhook Discord/Slack/Teams)
-- [ ] Ajout de la **supervision applicative AD** (services `NTDS`/`DNS`/`Netlogon`, sonde `check_dns`, ports TCP `389`/`88`)
-- [ ] Automatisation de la **sauvegarde Centreon** (cron MariaDB `centreon` + `centreon_storage` et `/etc/centreon*`)
-- [ ] Ajustement du seuil *Warning* RAM de `LAB-SRV-AD` pour supprimer l'alerte orange permanente
+- ✅ Déploiement de `LAB-SUPERVISION` (`10.10.40.1`) sous AlmaLinux 9 et sécurisation de la collecte **SNMP v2c**
+- ✅ Sondes actives : disponibilité hôtes (`FW`, `AD-SRV`, `Centreon-SRV`), CPU/RAM/Disque `C:` de l'AD, trafic des 5 VLANs OPNsense
+- ✅ Création du tableau de bord *« Globale View Infrastructure LAB »* et validation par injection de trafic inter-VLAN (RRDtool)
+- ⏳ Mise en place de l'**alerting** (relais SMTP/Postfix, contacts, politique de notification, option webhook Discord/Slack/Teams)
+- ⏳ Ajout de la **supervision applicative AD** (services `NTDS`/`DNS`/`Netlogon`, sonde `check_dns`, ports TCP `389`/`88`)
+- ⏳ Automatisation de la **sauvegarde Centreon** (cron MariaDB `centreon` + `centreon_storage` et `/etc/centreon*`)
+- ⏳ Ajustement du seuil *Warning* RAM de `LAB-SRV-AD` pour supprimer l'alerte orange permanente
 
 ---
 

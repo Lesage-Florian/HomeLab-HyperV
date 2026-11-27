@@ -22,6 +22,6 @@ L'architecture de sauvegarde repose sur `LAB-SRV-BACKUP` (`10.10.100.3/24`, VLAN
 > - **1 copie hors site** : externalisation cloud ciblée vers **AWS Glacier** pour l'archivage long terme et la reprise après sinistre.
 
 ### Actions restantes
-- [ ] Finaliser la configuration des volumes et partages SMB/NTFS sur `LAB-SRV-FILE`.
-- [ ] Installer et configurer **Veeam Backup & Replication** sur `LAB-SRV-BACKUP`.
-- [ ] Réaliser des tests de sauvegarde et de restauration (fichier unitaire + VM complète) pour valider les RPO/RTO.
+- ⏳ Finaliser la configuration des volumes et partages SMB/NTFS sur `LAB-SRV-FILE`.
+- ⏳ Installer et configurer **Veeam Backup & Replication** sur `LAB-SRV-BACKUP`.
+- ⏳ Réaliser des tests de sauvegarde et de restauration (fichier unitaire + VM complète) pour valider les RPO/RTO.

@@ -29,16 +29,16 @@ Le tableau de bord de synthèse **« Globale View Infrastructure LAB »** regrou
 ## 3. Évolutions & MCO (Maintien en Conditions Opérationnelles)
 
 ### Alerting & Notifications
-- [ ] Configurer un relais **Postfix / SMTP** sur `LAB-SUPERVISION` pour l'envoi d'e-mails d'alerte.
-- [ ] Créer les contacts et groupes de contacts (technicien / administrateur).
-- [ ] Définir les politiques de notification (ex. disque `C:` > 90 %, pare-feu `Down` > 2 minutes).
-- [ ] *(Optionnel)* Ajouter un webhook vers Discord, Slack ou Microsoft Teams pour les alertes critiques.
+- ⏳ Configurer un relais **Postfix / SMTP** sur `LAB-SUPERVISION` pour l'envoi d'e-mails d'alerte.
+- ⏳ Créer les contacts et groupes de contacts (technicien / administrateur).
+- ⏳ Définir les politiques de notification (ex. disque `C:` > 90 %, pare-feu `Down` > 2 minutes).
+- ⏳ *(Optionnel)* Ajouter un webhook vers Discord, Slack ou Microsoft Teams pour les alertes critiques.
 
 ### Supervision Applicative Active Directory
-- [ ] Superviser les services Windows critiques de l'AD (`NTDS`, `DNS`, `Netlogon`).
-- [ ] Ajouter une sonde de résolution DNS (`check_dns`) sur `10.10.100.1`.
-- [ ] Ajouter des contrôles de disponibilité sur les ports TCP critiques : **LDAP (`389`)** et **Kerberos (`88`)**.
+- ⏳ Superviser les services Windows critiques de l'AD (`NTDS`, `DNS`, `Netlogon`).
+- ⏳ Ajouter une sonde de résolution DNS (`check_dns`) sur `10.10.100.1`.
+- ⏳ Ajouter des contrôles de disponibilité sur les ports TCP critiques : **LDAP (`389`)** et **Kerberos (`88`)**.
 
 ### Exploitation & MCO
-- [ ] Mettre en place une tâche `cron` sauvegardant les bases MariaDB (`centreon` et `centreon_storage`) ainsi que `/etc/centreon*`.
-- [ ] Ajuster le seuil *Warning* sur la RAM de `LAB-SRV-AD` (actuellement en alerte orange) afin d'éviter la fatigue d'alerte.
+- ⏳ Mettre en place une tâche `cron` sauvegardant les bases MariaDB (`centreon` et `centreon_storage`) ainsi que `/etc/centreon*`.
+- ⏳ Ajuster le seuil *Warning* sur la RAM de `LAB-SRV-AD` (actuellement en alerte orange) afin d'éviter la fatigue d'alerte.
