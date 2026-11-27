@@ -1,0 +1,30 @@
+# Fichiers bruts / brouillons locaux
+archive/
+
+# Fichiers lourds de virtualisation Hyper-V
+*.vhdx
+*.avhdx
+*.vhd
+*.avhd
+*.iso
+*.img
+*.vfd
+*.bin
+*.vsv
+*.vmcx
+*.vmrs
+*.exp
+
+# Exports sensibles ou temporaires
+*.pfx
+*.key
+*.pem
+*.p12
+*.log
+*.tmp
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
