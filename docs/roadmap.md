@@ -1,4 +1,4 @@
-# Feuille de route & Livrables RNCP
+# Feuille de route
 
 ## 1. Travaux réalisés
 
