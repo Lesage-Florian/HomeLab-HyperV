@@ -1,4 +1,6 @@
-# Architecture & Dimensionnement Hyper-V
+[← Retour à l'accueil](../README.md)
+
+# 🏗️ Architecture & Dimensionnement Hyper-V
 
 ## 1. Prérequis Matériels & Hyperviseur
 
@@ -16,18 +18,19 @@ Un commutateur virtuel de type **Interne** nommé `vSwitch-LAB-INTERNE` isole le
 
 ## 2. Dimensionnement des Machines Virtuelles
 
-Pour optimiser la consommation mémoire sur l'hôte, les postes et serveurs Windows utilisent la **RAM Dynamique**, tandis que les appliances critiques (`LAB-FW`, `LAB-SUPERVISION`) utilisent une **RAM Fixe**.
+> [!TIP]
+> Pour optimiser la consommation mémoire sur l'hôte, les postes et serveurs Windows utilisent la **RAM Dynamique**, tandis que les appliances critiques (`LAB-FW`, `LAB-SUPERVISION`) utilisent une **RAM Fixe**.
 
-| Nom Hyper-V | Système d'Exploitation | Rôle dans l'architecture | Allocation RAM | Type de RAM |
-| :--- | :--- | :--- | :--- | :--- |
-| `LAB-FW` | OPNsense | Pare-feu, Routage inter-VLAN 802.1Q, DHCP | 1024 – 2048 Mo | Fixe |
-| `LAB-SRV-AD` | Windows Server 2025 | Contrôleur de Domaine (AD DS, DNS) | 2048 – 4096 Mo | Dynamique |
-| `LAB-SRV-FILE` | Windows Server 2025 | Serveur de Fichiers, Partages SMB/NTFS | 2048 – 4096 Mo | Dynamique |
-| `LAB-SRV-BACKUP` | Windows / Linux | Solution de Sauvegarde (Veeam Backup & Replication) | 2048 – 4096 Mo | Dynamique |
-| `LAB-SUPERVISION` | AlmaLinux 9 | Serveur de Métrologie & Alerting (Centreon) | 2048 – 4096 Mo | Fixe |
-| `LAB-PC-DIRECTION` | Windows 11 Pro | Poste Utilisateur — Service Direction | 2048 – 4096 Mo | Dynamique |
-| `LAB-PC-RH` | Windows 11 Pro | Poste Utilisateur — Service RH | 2048 – 4096 Mo | Dynamique |
-| `LAB-PC-ADMIN` | Windows 11 Pro | Poste Administrateur dédié | 2048 – 4096 Mo | Dynamique |
+| VM Hyper-V | OS | Rôle dans l'architecture | RAM (Type) |
+| :--- | :--- | :--- | :--- |
+| `LAB-FW` | OPNsense | Pare-feu, routage inter-VLAN 802.1Q, DHCP | 1024 – 2048 Mo *(Fixe)* |
+| `LAB-SRV-AD` | Windows Server 2025 | Contrôleur de domaine (`AD DS`, `DNS`) | 2048 – 4096 Mo *(Dynamique)* |
+| `LAB-SRV-FILE` | Windows Server 2025 | Serveur de fichiers, partages `SMB` / `NTFS` | 2048 – 4096 Mo *(Dynamique)* |
+| `LAB-SRV-BACKUP` | Windows / Linux | Sauvegarde (`Veeam Backup & Replication`) | 2048 – 4096 Mo *(Dynamique)* |
+| `LAB-SUPERVISION` | AlmaLinux 9 | Serveur de métrologie & alerting (`Centreon`) | 2048 – 4096 Mo *(Fixe)* |
+| `LAB-PC-DIRECTION` | Windows 11 Pro | Poste utilisateur — Service Direction | 2048 – 4096 Mo *(Dynamique)* |
+| `LAB-PC-RH` | Windows 11 Pro | Poste utilisateur — Service RH | 2048 – 4096 Mo *(Dynamique)* |
+| `LAB-PC-ADMIN` | Windows 11 Pro | Poste administrateur dédié | 2048 – 4096 Mo *(Dynamique)* |
 
 ---
 
@@ -40,6 +43,7 @@ Pour optimiser la consommation mémoire sur l'hôte, les postes et serveurs Wind
 
 ### Gestion des Points de Contrôle (Snapshots)
 
-Des points de contrôle Hyper-V sont créés systématiquement :
-1. Juste après l'installation de base de l'OS (avant personnalisation).
-2. Avant toute opération critique (promotion en contrôleur de domaine, installation de Centreon, refonte de règles pare-feu).
+> [!IMPORTANT]
+> Des points de contrôle Hyper-V sont créés systématiquement à deux moments clés :
+> 1. Juste après l'installation de base de l'OS (avant personnalisation).
+> 2. Avant toute opération critique (promotion en contrôleur de domaine, installation de Centreon, refonte de règles pare-feu).

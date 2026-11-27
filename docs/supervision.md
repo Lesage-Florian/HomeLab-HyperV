@@ -1,4 +1,6 @@
-# Supervision & Métrologie (Centreon)
+[← Retour à l'accueil](../README.md)
+
+# 📊 Supervision & Métrologie (Centreon)
 
 ## 1. Architecture de Supervision
 
@@ -11,6 +13,7 @@
 ## 2. Sondes Actives & Tableau de Bord
 
 Le tableau de bord de synthèse **« Globale View Infrastructure LAB »** regroupe :
+
 - **Grille d'état globale** des hôtes supervisés (`LAB-FW`, `LAB-SRV-AD`, `LAB-SUPERVISION`).
 - **Graphiques de métriques réseau** (vues **1 heure** et **24 heures**) sur l'ensemble des 5 interfaces VLAN d'OPNsense (`Traffic_VLAN_*`).
 - **Jauges et compteurs système** pour `LAB-SRV-AD` :
@@ -18,7 +21,8 @@ Le tableau de bord de synthèse **« Globale View Infrastructure LAB »** regrou
   - Utilisation RAM (`Memory`)
   - Espace disque (`C:`)
 
-La chaîne de collecte et la génération des courbes **RRDtool** ont été validées par injection de trafic inter-VLAN.
+> [!TIP]
+> La chaîne de collecte et la génération des courbes **RRDtool** ont été validées par injection de trafic inter-VLAN.
 
 ---
 

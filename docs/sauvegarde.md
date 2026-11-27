@@ -1,4 +1,6 @@
-# Serveur de Fichiers & Stratégie de Sauvegarde 3-2-1
+[← Retour à l'accueil](../README.md)
+
+# 💾 Serveur de Fichiers & Stratégie de Sauvegarde 3-2-1
 
 ## 1. Serveur de Fichiers (`LAB-SRV-FILE`)
 
@@ -14,9 +16,10 @@
 
 L'architecture de sauvegarde repose sur `LAB-SRV-BACKUP` (`10.10.100.3/24`, VLAN 100) avec **Veeam Backup & Replication** selon la règle **3-2-1** :
 
-1. **3 copies des données** : données de production sur les serveurs + sauvegarde locale + copie externalisée.
-2. **2 supports différents** : disques virtuels de production + stockage dédié / NAS local.
-3. **1 copie hors site** : externalisation cloud ciblée vers **AWS Glacier** pour l'archivage long terme et la reprise après sinistre.
+> [!IMPORTANT]
+> - **3 copies des données** : données de production sur les serveurs + sauvegarde locale + copie externalisée.
+> - **2 supports différents** : disques virtuels de production + stockage dédié / NAS local.
+> - **1 copie hors site** : externalisation cloud ciblée vers **AWS Glacier** pour l'archivage long terme et la reprise après sinistre.
 
 ### Actions restantes
 - [ ] Finaliser la configuration des volumes et partages SMB/NTFS sur `LAB-SRV-FILE`.
